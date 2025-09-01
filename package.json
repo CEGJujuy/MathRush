@@ -1,0 +1,16 @@
+{
+  "name": "mathrush",
+  "version": "1.0.0",
+  "description": "Mental reflex math game",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server . -p 3000 -o",
+    "start": "http-server . -p 3000"
+  },
+  "keywords": ["math", "game", "education"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
