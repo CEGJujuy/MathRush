@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathRush - Juego de Reflejos Mentales</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Pantalla de Inicio -->
+        <div id="startScreen" class="screen active">
+            <div class="logo">
+                <h1>🧮 MathRush</h1>
+                <p>¡Pon a prueba tus reflejos matemáticos!</p>
+            </div>
+            
+            <div class="player-setup">
+                <input type="text" id="playerName" placeholder="Ingresa tu nombre" maxlength="20">
+                
+                <div class="age-selector">
+                    <label>Selecciona tu edad:</label>
+                    <div class="age-buttons">
+                        <button class="age-btn" data-age="6-8">6-8 años</button>
+                        <button class="age-btn" data-age="9-11">9-11 años</button>
+                        <button class="age-btn" data-age="12-14">12-14 años</button>
+                        <button class="age-btn" data-age="15-16">15-16 años</button>
+                    </div>
+                </div>
+                
+                <div class="game-mode">
+                    <label>Modo de juego:</label>
+                    <div class="mode-buttons">
+                        <button class="mode-btn" data-mode="mixed">Operaciones Mixtas</button>
+                        <button class="mode-btn" data-mode="tables">Tablas de Multiplicar</button>
+                    </div>
+                </div>
+                
+                <button id="startGame" class="start-btn" disabled>¡Comenzar!</button>
+            </div>
+            
+            <div class="leaderboard">
+                <h3>🏆 Mejores Puntuaciones</h3>
+                <div id="topScores"></div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <div class="player-info">
+                    <span id="playerDisplay"></span>
+                    <span id="levelDisplay"></span>
+                </div>
+                <div class="game-stats">
+                    <div class="stat">
+                        <span class="stat-label">Puntos</span>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Racha</span>
+                        <span id="streak">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timer-container">
+                <div id="timer" class="timer"></div>
+                <div class="timer-text">Tiempo restante</div>
+            </div>
+            
+            <div class="question-container">
+                <div id="question" class="question"></div>
+                <div class="options">
+                    <button class="option-btn" data-option="0"></button>
+                    <button class="option-btn" data-option="1"></button>
+                    <button class="option-btn" data-option="2"></button>
+                    <button class="option-btn" data-option="3"></button>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <span id="questionCounter">Pregunta 1 de 10</span>
+            </div>
+        </div>
+
+        <!-- Pantalla de Resultados -->
+        <div id="resultScreen" class="screen">
+            <div class="result-content">
+                <div id="resultIcon" class="result-icon">🎉</div>
+                <h2 id="resultTitle">¡Excelente trabajo!</h2>
+                <div class="final-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="finalScore">0</div>
+                        <div class="stat-label">Puntos Totales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="finalAccuracy">0%</div>
+                        <div class="stat-label">Precisión</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="finalTime">0s</div>
+                        <div class="stat-label">Tiempo Promedio</div>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button id="playAgain" class="action-btn primary">Jugar de Nuevo</button>
+                    <button id="backToMenu" class="action-btn secondary">Menú Principal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="audio.js"></script>
+</body>
+</html>
