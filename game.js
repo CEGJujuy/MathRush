@@ -307,7 +307,9 @@ class MathRush {
             this.createParticles();
             
         } else {
-            optionBtns[selectedIndex].classList.add('incorrect');
+            if (selectedIndex >= 0) {
+                optionBtns[selectedIndex].classList.add('incorrect');
+            }
             
             // Mostrar respuesta correcta
             optionBtns.forEach((btn, index) => {
